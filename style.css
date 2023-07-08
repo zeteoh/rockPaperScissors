@@ -1,0 +1,82 @@
+body{
+    background-color: #56709c;   
+    margin: 0px;
+    padding: 0px;
+    color: white;
+}
+
+.header{
+    background-color: #334769;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Courier, monospace;
+    padding: 50px 0;
+    font-weight: bold;
+    font-size: 80px;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.choices{
+    width: 80%;
+    justify-content: center;
+    display: flex;
+    padding: 30px 0;
+    gap: 10%;
+}
+
+
+.choices .rock, .choices .scissors, .choices .paper{
+    font-size: 150px;
+    font-weight: 400;
+    width: 160px;
+    height: 160px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .1s ease;
+    /* From https://css.glass */
+    background: rgba(59, 71, 81, 0.63);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(11.5px);
+    -webkit-backdrop-filter: blur(11.5px);
+    border: 1px solid rgba(59, 71, 81, 1);
+}
+
+.choices .rock:hover, .choices .scissors:hover, .choices .paper:hover{
+    transform: scale(1.1);
+}
+
+.output-result{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    gap: 10%;
+    font-size: 40px;
+}
+
+.player-card, .bot-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-choice, .bot-choice{
+    font-size: 150px;
+    font-weight: 400;
+}
+
+.result{
+    font-size: 70px;
+}
