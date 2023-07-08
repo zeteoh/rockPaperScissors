@@ -77,6 +77,18 @@ body{
     font-weight: 400;
 }
 
+.score-container{
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+}
+
+.rounds{
+    border-right: 1px solid rgb(254, 255, 255);
+    border-left: 1px solid rgb(254, 255, 255);
+    padding: 0 10px;
+}
+
 .result{
     font-size: 70px;
 }
