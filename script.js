@@ -5,6 +5,9 @@ const getRound = document.querySelector('.rounds')
 const getPlayerChoice = document.querySelector('.player-choice');
 const getBotChoice = document.querySelector('.bot-choice');
 const getResult = document.querySelector('.result');
+const getOverlay = document.querySelector('.overlay');
+const getTryAgain = document.querySelector('.try-again');
+getTryAgain.textContent = "Click to try again";
 
 let playerScore = 0;
 let botScore = 0;
@@ -28,15 +31,24 @@ choice.forEach((button) => {
         getPlayerChoice.textContent = choiceMap[button.classList[0]];
         getBotChoice.textContent = choiceMap[botChoice];
         if(playerScore == 5 || botScore == 5){
-            round += 1;
-            playerScore = 0;
-            botScore = 0;
+            overlayOn();
         }
         getPlayerScore.innerHTML = playerScore;
         getBotScore.innerHTML = botScore;
         getRound.textContent = `Round ${round}`;
         getResult.textContent = result;
     })
+})
+
+getTryAgain.addEventListener('click', () => {
+    round += 1;
+    playerScore = 0;
+    botScore = 0;
+    overlayOff()
+    getPlayerScore.innerHTML = playerScore;
+    getBotScore.innerHTML = botScore;
+    getRound.textContent = `Round ${round}`;
+    getResult.textContent = "";
 })
 
 function getComputerChoice(){
@@ -70,3 +82,12 @@ function singleRound(playerSelection, computerSelection){
     
     return outputStr
 }
+
+function overlayOn(){
+    getOverlay.style.display = "block";
+}
+
+function overlayOff(){
+    getOverlay.style.display = "none";
+}
+
